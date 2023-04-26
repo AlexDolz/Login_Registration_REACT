@@ -1,0 +1,31 @@
+.input_elem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 7px 16px;
+
+  position: static;
+  width: 356px;
+  height: 48px;
+  left: calc(50% - 356px / 2);
+  top: 0%;
+  bottom: 53.85%;
+
+  background: #ffffff;
+
+  border: 1px solid #cfd8dc;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 8px 0px;
+}
+
+@media (max-width: 440px) {
+  .input_elem {
+    width: 260px;
+  }
+}
