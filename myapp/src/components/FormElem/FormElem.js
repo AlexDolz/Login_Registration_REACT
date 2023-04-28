@@ -34,13 +34,18 @@ const FormElem = ({ title, link, button, input, infoText, type }) => {
         'Password mus container at least 8 letters and at least 1 number',
     },
   });
-  const secondPasswordElem = register('secondPassword', {
-    required: 'Password must be completed',
-    validate: value => value === password.current || 'Passwords do not match',
-  });
+  const secondPasswordElem =
+    type === 'reg'
+      ? register('secondPassword', {
+          required: 'Password must be completed',
+          validate: value =>
+            value === password.current || 'Passwords do not match',
+        })
+      : '';
 
   const onSubmit = data => {
     console.log(data);
+    reset();
   };
 
   return (
@@ -56,13 +61,17 @@ const FormElem = ({ title, link, button, input, infoText, type }) => {
           )}
         </div>
 
-        <p>{input.password}</p>
-        <Input {...passwordElem} />
-        <div>
-          {errors.password && (
-            <p className={s.warning_text}>{errors.password.message}</p>
-          )}
-        </div>
+        {type !== 'reset' && (
+          <>
+            <p>{input.password}</p>
+            <Input {...passwordElem} />
+            <div>
+              {errors.password && (
+                <p className={s.warning_text}>{errors.password.message}</p>
+              )}
+            </div>
+          </>
+        )}
 
         {type === 'reg' && (
           <>
@@ -79,6 +88,13 @@ const FormElem = ({ title, link, button, input, infoText, type }) => {
         )}
 
         <p className={s.info_text}>{infoText}</p>
+
+        {type === 'login' && (
+          <Link to='/reset'>
+            <p className={s.info_text_forgot}>Forgot Password? Click here!</p>
+          </Link>
+        )}
+
         <Button title={button.submit} color='yellow' />
         <Link to={link}>
           <Button title={button.redirect} color='white' />

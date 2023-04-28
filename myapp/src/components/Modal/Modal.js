@@ -57,6 +57,23 @@ const Modal = ({ active, setActive }) => {
               />
             }
           />
+          <Route
+            path='/reset'
+            element={
+              <FormElem
+                title={'Reset password'}
+                link={'/login'}
+                input={{
+                  email: 'Email',
+                }}
+                button={{ redirect: 'Login', submit: 'Confirm reset' }}
+                infoText={
+                  'Please enter your registered account email. A link to reset your password will be sent to your email address. Activation period - 24 hours'
+                }
+                type={'reset'}
+              />
+            }
+          />
         </Routes>
       </div>
     </div>

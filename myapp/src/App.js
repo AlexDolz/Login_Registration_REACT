@@ -9,10 +9,10 @@ const App = () => {
 
   return (
     <div className='app'>
-      <Link to={'/reg'}>
+      <Link to={'/login'}>
         <Button
           onClick={() => setActive(true)}
-          title={'Registration / Login'}
+          title={'Login / Registration'}
           color={'yellow'}
         />
       </Link>

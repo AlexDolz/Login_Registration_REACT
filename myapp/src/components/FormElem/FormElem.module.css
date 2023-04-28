@@ -17,6 +17,16 @@
   font-size: 14px;
   line-height: 16px;
 }
+.info_text_forgot {
+  width: 355px;
+  color: gray;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 16px;
+  text-decoration: underline;
+  padding-bottom: 10px;
+}
 h2 {
   margin-bottom: 15px;
 }
